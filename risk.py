@@ -43,38 +43,6 @@ def main():
                 playing = False
                 print("Thanks for playing!")
 main()
-# def roll_dice():
-#     attackers = [randint(1, 6) for i in range(num_dice_a)]
-#     attackers.sort(reverse = True)
-#     print(f"Attacker rolled: {attackers}")
-#
-#     defenders = [randint(1, 6) for i in range(num_dice_b)]
-#     defenders.sort(reverse = True)
-#     print(f"Defender rolled: {defenders}")
-#
-#     attack_units_lost = 0
-#     defend_units_lost = 0
-#
-#     for atk, dfn in zip(attackers, defenders):
-#         if atk <= dfn:
-#             attack_units_lost += 1
-#         else:
-#             defend_units_lost += 1
-#
-#
-#
-#     print(f"Lost {attack_units_lost} attackers")
-#     print(f"Lost {defend_units_lost} defenders")
-#
-#     playing = True
-#     while playing:
-#         roll_dice()
-#         play_again = input("Do you want to play again? (yes?)\n")
-#         play_again = play_again.lower()
-#         if not play_again.startswith('y'):
-#             playing = False
-#         print("Thanks for playing!")
-#
-# roll_dice()
+
 
 
