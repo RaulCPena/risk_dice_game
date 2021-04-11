@@ -1,0 +1,9 @@
+# Files to ignore
+
+.idea/
+__pycache__/
+functions.py
+risk_dice_game.iml
+risk_function.py
+risk_gameV2.py
+while_loop_practice.py
