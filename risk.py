@@ -36,7 +36,6 @@ def main():
             print("You Win")
 
         while playing:
-            # roll_dice()
             play_again = input("Do you want to play again? (yes?)\n")
             play_again = play_again.lower()
             if not play_again.startswith('y'):
