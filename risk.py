@@ -11,18 +11,18 @@ num_dice_b = b if (b < 3) and (b > 0) else 2
 num_dice_c = c if c < a else 3
 
 #   a loop that runs the while loop conditions
-while (num_dice_a > 0 and num_dice_b > 0 and c > 0):
+while num_dice_a > 0 and num_dice_b > 0 and c > 0:
     num_dice_a = num_dice_a
     num_dice_b = num_dice_b
 
 #   creates a random number from 1 to 6 for attackers
     attackers = [randint(1, 6) for i in range(num_dice_a)]
-    attackers.sort(reverse = True)
+    attackers.sort(reverse=True)
     print(f"Attacker rolled: {attackers}")
 
 #   creates a random number from 1 to 6 for defenders
     defenders = [randint(1, 6) for i in range(num_dice_b)]
-    defenders.sort(reverse = True)
+    defenders.sort(reverse=True)
     print(f"Defender rolled: {defenders}")
 
 #   var created and set to zero
@@ -42,7 +42,7 @@ while (num_dice_a > 0 and num_dice_b > 0 and c > 0):
 #   This is where the vars determine if the conditions have been met
     num_dice_a = num_dice_a - attack_units_lost
     num_dice_b = num_dice_b - defend_units_lost
-    c = c = attack_units_lost
+    c = attack_units_lost
 
     print(f"Attackers remaining: {num_dice_a}")
     print(f"Defenders remaining: {num_dice_b}")
