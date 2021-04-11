@@ -1,47 +1,39 @@
 from random import randint
-
+# takes in the user input
 a = int(input("Enter number of attackers: "))
 b = int(input("Enter number of defenders: "))
 c = int(input("How many attackers are you willing to lose? "))
 
-num_dice_a = a if a < 4 else 3
-num_dice_b = b if b < 3 else 2
+# this does not allow the user to enter a higher number which would be outside the rules of the game
+num_dice_a = a if (a < 4) and (a > 0) else 3
+num_dice_b = b if (b < 3) and (b > 0) else 2
 num_dice_c = c if c < a else 3
 
-def main():
-    playing = True
-    while playing:
-        attackers = [randint(1, 6) for i in range(num_dice_a)]
-        attackers.sort(reverse = True)
-        print(f"Attacker rolled: {attackers}")
-        defenders = [randint(1, 6) for i in range(num_dice_b)]
-        defenders.sort(reverse = True)
-        print(f"Defender rolled: {defenders}")
-        attack_units_lost = 0
-        defend_units_lost = 0
-        for atk, dfn in zip(attackers, defenders):
-            if atk <= dfn:
-                attack_units_lost += 1
-            else:
-                defend_units_lost += 1
-        print(f"Lost {attack_units_lost} attackers")
-        print(f"Lost {defend_units_lost} defenders")
-        if attack_units_lost >= c:
-            playing = False
-            print("Game Ended Over! The attacker has reached their threshold!! The defender wins!")
-        elif defend_units_lost == defenders:
-            playing = False
-            print("The defender has run out of defenders! The attacker wins!")
+# a loop that runs the while loop conditions
+while (num_dice_a > 0 and num_dice_b > 0 and c > 0):
+    num_dice_a = num_dice_a
+    num_dice_b = num_dice_b
+    attackers = [randint(1, 6) for i in range(num_dice_a)]
+    attackers.sort(reverse = True)
+    print(f"Attacker rolled: {attackers}")
+    defenders = [randint(1, 6) for i in range(num_dice_b)]
+    defenders.sort(reverse = True)
+    print(f"Defender rolled: {defenders}")
+    attack_units_lost = 0
+    defend_units_lost = 0
+# take
+    for atk, dfn in zip(attackers, defenders):
+        if atk <= dfn:
+            attack_units_lost += 1
         else:
-            print("You Win")
+            defend_units_lost += 1
 
-        while playing:
-            play_again = input("Do you want to play again? (yes?)\n")
-            play_again = play_again.lower()
-            if not play_again.startswith('y'):
-                playing = False
-                print("Thanks for playing!")
-main()
+    print(f"Lost {attack_units_lost} attackers")
+    print(f"Lost {defend_units_lost} defenders")
 
+    num_dice_a = num_dice_a - attack_units_lost
+    num_dice_b = num_dice_b - defend_units_lost
+    c = c = attack_units_lost
 
-
+    print(f"Attackers remaining: {num_dice_a}")
+    print(f"Defenders remaining: {num_dice_b}")
