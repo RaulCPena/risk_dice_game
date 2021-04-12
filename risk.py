@@ -42,7 +42,7 @@ while num_dice_a > 0 and num_dice_b > 0 and c > 0:
 #   This is where the vars determine if the conditions have been met
     num_dice_a = num_dice_a - attack_units_lost
     num_dice_b = num_dice_b - defend_units_lost
-    c = attack_units_lost
+    c -= attack_units_lost
 
     print(f"Attackers remaining: {num_dice_a}")
     print(f"Defenders remaining: {num_dice_b}")
