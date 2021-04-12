@@ -29,7 +29,7 @@ while num_dice_a > 0 and num_dice_b > 0 and c > 0:
     attack_units_lost = 0
     defend_units_lost = 0
 
-#   takes the output from attackers and defenders and dcompairs them from highest to lowest integer
+#   takes the output from attackers and defenders and compares them from highest to lowest integer
     for atk, dfn in zip(attackers, defenders):
         if atk <= dfn:
             attack_units_lost += 1
